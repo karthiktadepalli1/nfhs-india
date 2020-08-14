@@ -149,4 +149,4 @@ cols <- append(c("District name", "District number", "State code"), full_names)
 dict <- data.frame(Variable = colnames(wide), Meaning = cols)
 write.csv(dict, "district_data_dict.csv", row.names = F)
 
-write.csv(wide, "district_nfhs_final.csv", row.names = F)
+write.csv(wide, "district_nfhs.csv", row.names = F)
