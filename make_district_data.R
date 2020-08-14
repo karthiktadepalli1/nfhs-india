@@ -36,13 +36,10 @@ extract <- function(url) {
 
 sapply(urls, extract)
 
-# write raw, unscrubbed data to a CSV
+# remove empty row
 dists <- dists[2:nrow(dists),]
-write.csv(dists, "district_nfhs_raw.csv", row.names = F)
 
 #------------------CLEAN EXTRACTED TABLES-----------------
-
-dists <- read.csv("district_nfhs_raw.csv")
 
 # helper to clean statistics into numbers
 numerify <- function(col) {
