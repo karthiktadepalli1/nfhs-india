@@ -126,7 +126,7 @@ names_q <- c("pct_female_ever_school", "pct_below_15", "sex_ratio", "sex_ratio_5
              "pct_kids_only_breastfed", "pct_kids_food_breastmilk", "pct_breastfed_adeq_diet",
              "pct_nonbreastfed_adeq_diet", "pct_kids_adeq_diet", "pct_kids_stunted",
              "pct_kids_wasted", "pct_kids_severely_wasted", "pct_kids_underweight",
-             "pct_women_bmi_underweight", "pct_men_bmi_underweight", "pct_women_overweight",
+             "pct_women_underweight", "pct_men_underweight", "pct_women_overweight",
              "pct_men_overweight", "pct_kids_anaemic", "pct_nonpreg_women_anaemic", 
              "pct_preg_women_anaemic", "pct_women_anaemic", "pct_men_anaemic",
              "pct_women_high_sugar", "pct_women_very_high_sugar", "pct_men_high_sugar",
@@ -142,7 +142,7 @@ wide <- clean %>%
   spread(vbl, Total) %>%
   select(append(c("district", "district_num", "state_code"), full_names))
 
-colnames(wide) <- sapply(colnames(wide), function(x) { return(names_q[x])})
+colnames(wide)[4:96] <- sapply(colnames(wide)[4:96], function(x) { return(names_q[x])})
 
 # write final data dictionary and data
 cols <- append(c("District name", "District number", "State code"), full_names)
